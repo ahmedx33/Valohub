@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-family: 'Clash Display', sans-serif;
+}
+
+body {
+    @apply bg-[#1F2326]
+}
+
+.clip-arrow {
+    clip-path: polygon(68% 15%, 100% 50%, 100% 93%, 79% 100%, 0 100%, 0% 70%, 0 14%);
+}
