@@ -13,9 +13,9 @@ export default function Button({ children }: { children: React.ReactNode }) {
                     pointerEvents: 'none',
                 }}
 
-                className="uppercase text-[20px] font-bold"
+                className="uppercase text-[20px] font-bold w-[183px]"
             >
-                {children}
+                <span className=""> {children}</span>
 
             </div>
 

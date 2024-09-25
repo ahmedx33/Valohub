@@ -18,7 +18,7 @@ export default function HeroSection() {
                     </p>
                 </div>
 
-                <div className="flex items-center gap-8 mt-10 mb-16">
+                <div className="flex items-center gap-8 mt-10 mb-16 max-lg:flex-col">
                     <Button>
                         Buy Now
                     </Button>

@@ -9,7 +9,7 @@ const LINKS = [
 
 export default function Header() {
     return (
-        <header className="w-full h-[80px] bg-[#1F2326] container rounded-xl">
+        <header className="w-full h-[80px] bg-[#1F2326] container rounded-xl max-lg:hidden">
             <div className=" mx-auto h-full flex items-center justify-between px-7">
                 <Link to={"/"} className="mx-5">
                     <img src="/logo.png" alt="logo" />
