@@ -1,9 +1,27 @@
+type WavesComponentProps = {
+	width?: number;
+	height?: number;
+	className?: string;
+};
 
-export function WavesComponent() {
-    return (
-        <svg width="1920" height="613" viewBox="0 0 1920 613" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M743.342 148.01L-62.4586 176.578L-67.6026 257.44L-29.8246 574.901L1876.18 612.984C1917.98 589.589 2007.63 467.079 2012.89 460.693C2018.16 454.307 2003.57 201.369 1982.65 0.423232L1262.01 38.6252L1286.59 100.088L714.34 87.994L743.342 148.01Z" fill="#FF4654" />
-        </svg>
-
-    )
+export function WavesComponent({
+	width = 1920,
+	height = 613,
+	className,
+}: WavesComponentProps) {
+	return (
+		<svg
+			width={width}
+			height={height}
+			viewBox="0 0 1920 613"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			className={className}
+		>
+			<path
+				d="M743.342 148.01L-62.4586 176.578L-67.6026 257.44L-29.8246 574.901L1876.18 612.984C1917.98 589.589 2007.63 467.079 2012.89 460.693C2018.16 454.307 2003.57 201.369 1982.65 0.423232L1262.01 38.6252L1286.59 100.088L714.34 87.994L743.342 148.01Z"
+				fill="#FF4654"
+			/>
+		</svg>
+	);
 }
