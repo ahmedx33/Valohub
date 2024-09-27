@@ -1,5 +1,5 @@
+import Product from "./product";
 import Button from "./ui/button";
-import { WavesComponent } from "./waves-component";
 
 export default function LolAccountsSection() {
 	return (
@@ -29,33 +29,7 @@ export default function LolAccountsSection() {
 				</div>
 				<div className="flex flex-wrap gap-20 justify-center px-2 h-fit">
 					{Array.from({ length: 3 }).map((_, i) => (
-						<div
-							key={i}
-							className=" w-full max-w-[442px] h-[636px] border-2 relative"
-						>
-							<div className="size-full relative overflow-hidden flex items-end">
-								<img
-									src={`/lol-accounts-${i + 1}.png`}
-									className="w-full h-[488px] z-10 top-0 absolute"
-								/>
-								<WavesComponent
-									width={1042}
-									height={300}
-									className="absolute -bottom-12 -left-96"
-								/>
-								<div className="flex absolute items-end z-20 p-4">
-									<h1 className="text-[40px] text-start font-semibold">
-										1-20 Skins Mail Access | EU
-									</h1>
-									<p className="text-[40px]  text-start font-semibold">
-										$10
-									</p>
-								</div>
-							</div>
-							<Button className="absolute bottom-4">
-								Add to card
-							</Button>
-						</div>
+						<Product id={i.toString()} image={"/account-image.svg"} name={"1-20 Skins Mail Access | EU"} price={10} />
 					))}
 				</div>
 				<Button

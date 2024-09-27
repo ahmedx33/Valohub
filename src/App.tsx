@@ -1,5 +1,4 @@
 import CommunitySection from "./components/community-section";
-import { Footer } from "./components/layouts/footer";
 import HeroSection from "./components/hero";
 import Button from "./components/ui/button";
 import { WavesComponent } from "./components/waves-component";
@@ -39,7 +38,6 @@ function App() {
 			<AccountsSection />
 			<PhasesSection />
 			<LolAccountsSection />
-			<Footer />
 		</>
 	);
 }

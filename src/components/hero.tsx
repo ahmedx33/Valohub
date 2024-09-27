@@ -1,12 +1,10 @@
 import Button from "./ui/button";
-import Header from "./layouts/header";
 
 export default function HeroSection() {
 	return (
 		<section className="relative w-full h-fit bg-[#FF4656] py-8 ">
 			{/* Text and navigation are layered above the image */}
 			<div className="relative z-10 flex flex-col justify-start items-center h-full text-center px-4">
-				<Header />
 				<div className="mt-20 flex flex-col items-center ">
 					<h1 className="text-[#1F2326] font-medium text-[40px] md:text-[80px] lg:text-[120px] w-full max-w-[1444px]">
 						Welcome to the
