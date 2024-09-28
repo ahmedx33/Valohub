@@ -9,16 +9,19 @@ const LINKS = [
 
 export default function Header() {
     return (
-        <header className="fixed top-3 left-1/2 right-1/2 transform -translate-x-1/2 w-full h-[82px]  z-50 px-20 max-lg:hidden">
+        <header className="fixed top-3 left-1/2 transform -translate-x-1/2 w-full h-[82px] z-50 px-20 max-lg:hidden">
             <svg
                 className="absolute top-0 left-0 w-full h-full"
+                width="1677"
+                height="82"
                 viewBox="0 0 1677 82"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path
-                    d="M12.5 1.5L1634.5 0L1667.5 52L1664.71 81.5H36.409L12.5 1.5Z"
+                    d="M36.7814 81L13.1711 1.99938L1634.23 0.500254L1666.99 52.1233L1664.26 81H36.7814Z"
                     fill="#1F2326"
+                    stroke="white"
                 />
                 <path
                     d="M1676 62.6613L1634.91 1.5H1632.5L1666.22 59.2634L1654.48 80.5H1665.24L1676 62.6613Z"
@@ -32,9 +35,9 @@ export default function Header() {
                 />
             </svg>
 
-            <div className="relative mx-auto h-full flex items-center justify-between px-7">
+            <div className="relative mx-auto h-full flex items-center justify-between z-10 px-7 container">
                 <Link to={"/"} className="mx-5">
-                    <img src="/logo.png" alt="logo" />
+                    <img src="/logo.png" alt="logo" className="h-10" />
                 </Link>
                 <ul className="flex items-center gap-6">
                     {LINKS.map((link) => (
@@ -50,7 +53,7 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
-                <button className="bg-[#FF4654] text-white text-[18px] font-bold p-2 rounded-lg">
+                <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg">
                     Buy Now
                 </button>
             </div>

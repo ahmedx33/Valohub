@@ -1,9 +1,17 @@
 import CommunityCard from "./community-cards";
+import Dots from "./other/dots";
 
 export default function CommunitySection() {
     return (
-        <section>
+        <section className="relative w-full h-fit">
+            <div className="absolute left-0">
+                <Dots />
+            </div>
             <CommunityCard />
+
+            <div className="absolute right-0 -top-20">
+                <Dots />
+            </div>
         </section>
     )
 }

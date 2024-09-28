@@ -4,12 +4,11 @@ export default function Product({ id, image, name, price }: Product) {
     return (
         <div className="relative w-full max-w-[442px] h-[636px]">
             <svg
-                width="442"
-                height="636"
                 viewBox="0 0 442 636"
-                fill="none"
+                preserveAspectRatio="xMidYMid meet"
+                className="absolute top-0 left-0 w-full h-full z-0"
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-0 left-0 z-0"
+                fill="none"
             >
                 <g clipPath="url(#clip0_124_3379)">
                     <path

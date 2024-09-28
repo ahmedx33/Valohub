@@ -13,3 +13,7 @@ body {
 .clip-arrow {
     clip-path: polygon(68% 15%, 100% 50%, 100% 93%, 79% 100%, 0 100%, 0% 70%, 0 14%);
 }
+
+.stroke-text {
+    -webkit-text-stroke: 2px black;
+}
