@@ -41,7 +41,7 @@ export default function LOLProductsPage() {
 
                     <div className="w-full flex items-center gap-6 max-lg:flex-col justify-center">
                         <Button>HOME</Button>
-                        <Button>LEAGUE OF LEGENDS</Button>
+                        <Button >LEAGUE OF LEGENDS</Button>
                     </div>
                 </div>
             </div>

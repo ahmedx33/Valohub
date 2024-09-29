@@ -39,7 +39,7 @@ export default function Button({
 					className={
 						variant === "bg"
 							? "italic font-bold text-center text-[40px] text-nowrap max-lg:font-medium max-md:text-[27px]"
-							: "max-lg:font-medium max-lg:text-[16px]"
+							: "max-lg:font-medium max-lg:text-[16px] max-sm:text-[13px]"
 					}
 				>
 					{children}
