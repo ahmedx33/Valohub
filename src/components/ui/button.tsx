@@ -1,26 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
 	className?: string;
 	variant?: "main" | "bg";
 }
+
 export default function Button({
 	children,
 	className,
 	variant = "main",
 }: ButtonProps) {
+	const [svgSize, setSvgSize] = useState({ width: 281, height: 71 });
+
+	useEffect(() => {
+		const handleResize = () => {
+			const screenWidth = window.innerWidth;
+			if (screenWidth <= 640) {
+				// Mobile size
+				setSvgSize({ width: 150, height: 40 });
+			} else {
+				// Desktop size
+				setSvgSize({ width: 281, height: 71 });
+			}
+		};
+
+		handleResize(); // Set initial size
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	return (
-		<div tabIndex={0} className={`cursor-pointer relative inline-block ${className}`}>
-			<div className="uppercase text-[20px] font-bold  absolute left-0 top-0 size-full text-white z-10 pointer-events-none flex items-center justify-center mx-auto">
+		<div
+			tabIndex={0}
+			className={`cursor-pointer relative inline-block ${className}`}
+		>
+			<div className="uppercase text-[20px] font-bold absolute left-0 top-0 size-full text-white z-10 pointer-events-none flex items-center justify-center mx-auto">
 				<span
 					className={
 						variant === "bg"
-							? "italic font-bold text-center text-[40px] text-nowrap"
-							: ""
+							? "italic font-bold text-center text-[40px] text-nowrap max-lg:font-medium"
+							: "max-lg:font-medium max-lg:text-[16px]"
 					}
 				>
-					{" "}
 					{children}
 				</span>
 			</div>
@@ -28,8 +51,9 @@ export default function Button({
 			{/* SVG element */}
 			{variant === "main" ? (
 				<svg
-					width="281"
-					height="71"
+					className="button-svg"
+					width={svgSize.width}
+					height={svgSize.height}
 					viewBox="0 0 281 71"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -208,8 +232,9 @@ export default function Button({
 				</svg>
 			) : (
 				<svg
-					width="554"
-					height="82"
+					className="button-svg"
+					width={svgSize.width}
+					height={svgSize.height}
 					viewBox="0 0 554 82"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +243,6 @@ export default function Button({
 						d="M4.62506 1.5L539.159 0L550.034 52L549.115 81.5H12.5043L4.62506 1.5Z"
 						fill="#FF4656"
 					/>
-
 					<path
 						d="M553 62.6613L539.46 1.5H538.664L549.776 59.2634L545.907 80.5H549.454L553 62.6613Z"
 						fill="white"

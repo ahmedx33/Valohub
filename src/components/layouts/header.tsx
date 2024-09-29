@@ -17,7 +17,7 @@ export default function Header() {
     };
 
     return (
-        <header className="fixed top-3 left-1/2 transform -translate-x-1/2 w-full h-[82px] z-50 px-20">
+        <header className="fixed top-3 left-1/2 transform -translate-x-1/2 w-full h-[82px] px-4 md:px-10 lg:px-20 z-[999]">
             <svg
                 className="absolute top-0 left-0 w-full h-full lg:block hidden"
                 width="1677"
@@ -67,16 +67,21 @@ export default function Header() {
                 />
             </svg>
 
-            <div className="relative mx-auto h-full flex items-center justify-between z-10 px-7 container">
+            <div className="max-lg:absolute relative mx-auto  h-full flex items-center justify-between z-10  container max-sm:px-5 max-lg:w-full left-0 md:px-[2rem] lg:px-7">
                 <Link to={"/"} className="mx-5">
-                    <img src="/logo.png" alt="logo" className="h-10" />
+                    {/* Adjusted logo size for mobile */}
+                    <img
+                        src="/logo.png"
+                        alt="logo"
+                        className="h-8 md:h-10" // Reduced logo size on small screens
+                    />
                 </Link>
 
-                <ul className="items-center gap-6 lg:flex hidden">
+                <ul className="items-center gap-6 lg:flex hidden mx-auto">
                     {LINKS.map((link) => (
                         <li
                             key={link.name}
-                            className="text-[18px] font-semibold text-white hover:text-[#FF4654] transition-all"
+                            className="text-[16px] md:text-[18px] font-semibold text-white hover:text-[#FF4654] transition-all"
                         >
                             {link.type === "path" ? (
                                 <Link to={link.path}>{link.name}</Link>
@@ -86,7 +91,7 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
-                <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg lg:block hidden">
+                <button className="bg-[#FF4654] text-white text-[16px] md:text-[18px] font-bold px-4 py-2 rounded-lg lg:block hidden">
                     Buy Now
                 </button>
 
@@ -96,9 +101,8 @@ export default function Header() {
                 >
                     <FiMenu />
                 </button>
-
                 {isMenuOpen && (
-                    <div className="absolute top-full left-0 w-full bg-[#1F2326] p-5 lg:hidden flex flex-col items-center space-y-4">
+                    <div className="absolute top-full left-0 right-0 w-full bg-[#1F2326] p-5 lg:hidden flex flex-col items-center space-y-4 mx-auto md:left-[2rem]">
                         <ul className="flex flex-col items-center gap-4">
                             {LINKS.map((link) => (
                                 <li
@@ -119,6 +123,7 @@ export default function Header() {
                         </button>
                     </div>
                 )}
+
             </div>
         </header>
     );
