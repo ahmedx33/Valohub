@@ -22,9 +22,7 @@ export default function HeroSection() {
 						Account <span className="font-bold">Shop</span>
 					</h1>
 					<p className="w-full max-w-[1369px] text-[#1F2326] text-[18px] md:text-[24px] lg:text-[30px] mt-4">
-						Lorem ipsum dolor sit amet, consectetur adipiscing
-						elit, sed do eiusmod tempor incididunt ut labore
-						et dolore magna aliqua.
+						Premium VALORANT and League of Legends accounts with rare, exclusive skins, high ranks, and multiple champions/agents unlocked. Includes limited-edition skins, battle pass rewards, and unique cosmetic items for competitive play.
 					</p>
 				</div>
 

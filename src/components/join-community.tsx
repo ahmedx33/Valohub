@@ -21,10 +21,7 @@ export default function JoinCommunity() {
                         <span className="font-bold">COMMUNITY</span>
                     </h2>
                     <p className="w-[80%] text-[#1F2326] text-[30px] mx-auto text-center">
-                        Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua.
-                        Ut enim
+                        Join our community of VALORANT and League of Legends players! Trade accounts, share tips, and connect with fellow gamers.
                     </p>
                 </div>
 
