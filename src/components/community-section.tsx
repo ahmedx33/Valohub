@@ -3,7 +3,7 @@ import Dots from "./other/dots";
 
 export default function CommunitySection() {
     return (
-        <section className="relative w-full h-fit">
+        <section id="community" className="relative w-full h-fit">
             <div className="absolute left-0">
                 <Dots />
             </div>

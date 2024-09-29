@@ -6,7 +6,7 @@ const LINKS = [
     { name: "Home", path: "/", type: "path" },
     { name: "LEAGUE OF LEGENDS", path: "/lol", type: "path" },
     { name: "VALORANT", path: "/valorant", type: "path" },
-    { name: "COMMUNITY", path: "/community", type: "path" },
+    { name: "COMMUNITY", path: "#community", type: "href" },
 ];
 
 export default function Header() {
@@ -18,7 +18,6 @@ export default function Header() {
 
     return (
         <header className="fixed top-3 left-1/2 transform -translate-x-1/2 w-full h-[82px] z-50 px-20">
-            {/* Desktop SVG */}
             <svg
                 className="absolute top-0 left-0 w-full h-full lg:block hidden"
                 width="1677"
@@ -44,7 +43,6 @@ export default function Header() {
                 />
             </svg>
 
-            {/* Mobile SVG */}
             <svg
                 className="absolute top-0 left-0 w-full h-full lg:hidden block"
                 width="417"
@@ -69,13 +67,11 @@ export default function Header() {
                 />
             </svg>
 
-            {/* Container */}
             <div className="relative mx-auto h-full flex items-center justify-between z-10 px-7 container">
                 <Link to={"/"} className="mx-5">
                     <img src="/logo.png" alt="logo" className="h-10" />
                 </Link>
 
-                {/* Desktop Links */}
                 <ul className="items-center gap-6 lg:flex hidden">
                     {LINKS.map((link) => (
                         <li
@@ -90,13 +86,10 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
-
-                {/* Buy Now Button */}
                 <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg lg:block hidden">
                     Buy Now
                 </button>
 
-                {/* Mobile Menu */}
                 <button
                     className="lg:hidden block text-white text-3xl"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -104,7 +97,6 @@ export default function Header() {
                     <FiMenu />
                 </button>
 
-                {/* Mobile Dropdown */}
                 {isMenuOpen && (
                     <div className="absolute top-full left-0 w-full bg-[#1F2326] p-5 lg:hidden flex flex-col items-center space-y-4">
                         <ul className="flex flex-col items-center gap-4">
