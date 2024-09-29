@@ -15,7 +15,7 @@ export default function LOLProductsPage() {
     return (
         <div className="mt-36">
             <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656]">
-                <WavesComponent className="absolute top-0 left-1/2 h-full -translate-x-1/2 " />
+                <WavesComponent className="absolute top-0 left-1/2 h-full max-lg:hidden -translate-x-1/2 " />
 
                 <div className="w-full h-full relative container mx-auto">
                     <div className="absolute -left-20 max-lg:hidden z-50">

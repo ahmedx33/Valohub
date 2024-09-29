@@ -23,7 +23,7 @@ export default function Button({
 			}
 		};
 
-		handleResize(); 
+		handleResize();
 		window.addEventListener("resize", handleResize);
 
 		return () => window.removeEventListener("resize", handleResize);
@@ -32,7 +32,7 @@ export default function Button({
 	return (
 		<div
 			tabIndex={0}
-			className={`cursor-pointer relative inline-block ${className}`}
+			className={`cursor-pointer relative inline-block  ${className}`}
 		>
 			<div className="uppercase text-[20px] font-bold absolute left-0 top-0 size-full text-white z-10 pointer-events-none flex items-center justify-center mx-auto">
 				<span

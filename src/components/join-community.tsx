@@ -5,7 +5,7 @@ import { WavesComponent } from "./waves-component";
 
 export default function JoinCommunity() {
     return (
-        <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656] rounded-xl container mx-auto">
+        <div className="relative h-[800px] max-md:h-[590px] max-lg:p-0 py-24 max-lg:bg-[#FF4656] rounded-xl container mx-auto">
             <div className="absolute -left-20 -bottom-32 max-lg:hidden z-50">
                 <Text2 />
             </div>

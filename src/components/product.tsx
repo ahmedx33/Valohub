@@ -2,7 +2,7 @@ import Button from './ui/button';
 
 export default function Product({ id, image, name, price }: Product) {
     return (
-        <div className="relative w-full max-w-[442px] h-[636px]">
+        <div className="relative w-full max-w-[442px] h-[636px] max-lg:h-auto mx-auto">
             <svg
                 viewBox="0 0 442 636"
                 preserveAspectRatio="xMidYMid meet"
@@ -29,14 +29,14 @@ export default function Product({ id, image, name, price }: Product) {
             </svg>
 
             <div className="relative z-10 w-full h-full flex flex-col items-center justify-between p-4">
-                <img src={image} alt={name} className="w-full h-[488px] object-cover" />
-                <div className="text-center mb-[3rem]">
-                    <h2 className="text-[30px] font-semibold">{name}</h2>
-                    <p className="text-[30px] font-semibold">${price}</p>
+                <img src={image} alt={name} className="w-full h-[488px] object-cover max-lg:h-auto" />
+                <div className="text-center mb-20 max-lg:mb-12">
+                    <h2 className="text-[30px] max-lg:text-[20px] font-semibold MT-2">{name}</h2>
+                    <p className="text-[30px] font-semibold ">${price}</p>
                 </div>
-                <div className="absolute -bottom-[2rem] w-full flex justify-center">
+                <div className="absolute bottom-4 w-full flex justify-center translate-y-[43px]">
                     <button data-sellix-product={id}>
-                        <Button>Add to cart</Button>
+                        <Button>BUY NOW</Button>
                     </button>
                 </div>
             </div>

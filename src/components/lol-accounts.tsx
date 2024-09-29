@@ -11,7 +11,6 @@ export default function LolAccountsSection() {
 	console.log("from accounts", filter);
 	return (
 		<section className="relative w-full h-fit bg-[#1F2326] py-8  lg:mt-[10rem] container mx-auto">
-
 			<div className="absolute left-0 bottom-0">
 				<Dots />
 			</div>

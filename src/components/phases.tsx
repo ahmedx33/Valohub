@@ -4,7 +4,7 @@ import { WavesComponent } from "./waves-component";
 
 export function PhasesSection() {
 	return (
-		<div className="relative h-[120rem]">
+		<div className="relative h-[120rem] max-lg:h-[97rem]">
 			<div className="w-full h-full relative container mx-auto">
 				<div className="absolute -left-20 -bottom-0 max-lg:hidden z-50">
 					<Text4 />
