@@ -1,4 +1,4 @@
-import CommunityCard from "./community-cards";
+import CommunityCards from "./community-cards";
 import Dots from "./other/dots";
 
 export default function CommunitySection() {
@@ -7,7 +7,7 @@ export default function CommunitySection() {
             <div className="absolute left-0">
                 <Dots />
             </div>
-            <CommunityCard />
+            <CommunityCards />
 
             <div className="absolute right-0 -top-20">
                 <Dots />

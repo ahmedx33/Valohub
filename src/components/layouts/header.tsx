@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FiMenu } from "react-icons/fi";
 
 const LINKS = [
     { name: "Home", path: "/", type: "path" },
@@ -8,10 +10,17 @@ const LINKS = [
 ];
 
 export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleLinkClick = () => {
+        setIsMenuOpen(false);
+    };
+
     return (
-        <header className="fixed top-3 left-1/2 transform -translate-x-1/2 w-full h-[82px] z-50 px-20 max-lg:hidden">
+        <header className="fixed top-3 left-1/2 transform -translate-x-1/2 w-full h-[82px] z-50 px-20">
+            {/* Desktop SVG */}
             <svg
-                className="absolute top-0 left-0 w-full h-full"
+                className="absolute top-0 left-0 w-full h-full lg:block hidden"
                 width="1677"
                 height="82"
                 viewBox="0 0 1677 82"
@@ -35,11 +44,39 @@ export default function Header() {
                 />
             </svg>
 
+            {/* Mobile SVG */}
+            <svg
+                className="absolute top-0 left-0 w-full h-full lg:hidden block"
+                width="417"
+                height="47"
+                viewBox="0 0 417 47"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M4.09753 0.857039L405.479 0L413.645 29.7107L412.955 46.5658H10.0141L4.09753 0.857039Z"
+                    fill="#1F2326"
+                />
+                <path
+                    d="M415.748 35.802L405.581 0.856934H404.984L413.327 33.8606L410.422 45.9943H413.085L415.748 35.802Z"
+                    fill="white"
+                    stroke="white"
+                />
+                <path
+                    d="M7.08657 0.856934H4.16914L1.25171 11.2733L10.004 45.9943H13.1298L4.7943 11.2733L7.08657 0.856934Z"
+                    fill="white"
+                    stroke="white"
+                />
+            </svg>
+
+            {/* Container */}
             <div className="relative mx-auto h-full flex items-center justify-between z-10 px-7 container">
                 <Link to={"/"} className="mx-5">
                     <img src="/logo.png" alt="logo" className="h-10" />
                 </Link>
-                <ul className="flex items-center gap-6">
+
+                {/* Desktop Links */}
+                <ul className="items-center gap-6 lg:flex hidden">
                     {LINKS.map((link) => (
                         <li
                             key={link.name}
@@ -53,9 +90,43 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
-                <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg">
+
+                {/* Buy Now Button */}
+                <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg lg:block hidden">
                     Buy Now
                 </button>
+
+                {/* Mobile Menu */}
+                <button
+                    className="lg:hidden block text-white text-3xl"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                    <FiMenu />
+                </button>
+
+                {/* Mobile Dropdown */}
+                {isMenuOpen && (
+                    <div className="absolute top-full left-0 w-full bg-[#1F2326] p-5 lg:hidden flex flex-col items-center space-y-4">
+                        <ul className="flex flex-col items-center gap-4">
+                            {LINKS.map((link) => (
+                                <li
+                                    key={link.name}
+                                    className="text-[18px] font-semibold text-white hover:text-[#FF4654] transition-all"
+                                    onClick={handleLinkClick}
+                                >
+                                    {link.type === "path" ? (
+                                        <Link to={link.path}>{link.name}</Link>
+                                    ) : (
+                                        <a href={link.path}>{link.name}</a>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                        <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg">
+                            Buy Now
+                        </button>
+                    </div>
+                )}
             </div>
         </header>
     );

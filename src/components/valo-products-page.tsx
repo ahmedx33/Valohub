@@ -6,6 +6,8 @@ import Splash from "./other/splash";
 import Product from "./product";
 import Button from "./ui/button";
 import { WavesComponent } from "./waves-component";
+import Text2 from "./other/text2";
+import Text3 from "./other/text3";
 
 export default function ValoProductsPage() {
     const [filter, setFilter] = useState<string>("");
@@ -14,6 +16,15 @@ export default function ValoProductsPage() {
         <div className="mt-36">
             <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656]">
                 <WavesComponent className="absolute top-0 left-1/2 h-full -translate-x-1/2 " />
+                <div className="w-full h-full relative container mx-auto">
+                    <div className="absolute -left-20 max-lg:hidden z-50">
+                        <Text2 />
+                    </div>
+
+                    <div className="absolute -right-20 -bottom-32 max-lg:hidden z-50">
+                        <Text3 />
+                    </div>
+                </div>
                 <div className="absolute top-1/2 left-1/2 h-96rem transform -translate-x-1/2 -translate-y-1/2 w-full">
                     <div className="my-10 flex flex-col text-center w-full">
                         <h2 className="text-[120px] max-sm:text-3xl max-lg:text-5xl text-center text-[#1F2326] font-medium">

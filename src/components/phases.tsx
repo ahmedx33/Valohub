@@ -1,8 +1,19 @@
+import Text4 from "./other/text4";
+import Text5 from "./other/text5";
 import { WavesComponent } from "./waves-component";
 
 export function PhasesSection() {
 	return (
 		<div className="relative h-[120rem]">
+			<div className="w-full h-full relative container mx-auto">
+				<div className="absolute -left-20 -bottom-0 max-lg:hidden z-50">
+					<Text4 />
+				</div>
+
+				<div className="absolute -right-20 top-72 max-lg:hidden z-50">
+					<Text5 />
+				</div>
+			</div>
 			<WavesComponent className="right-0 absolute top-[16rem]" />
 			<div className="absolute bg-[#FF4656] mt-24 z-20 h-[80rem] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
 				<div className="w-full h-[125%] overflow-hidden relative  py-24 bg-[#FF4656] max-lg:px-0 px-80">

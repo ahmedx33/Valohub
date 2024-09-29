@@ -1,4 +1,5 @@
 import Text1 from "./other/text1";
+import Text6 from "./other/text6";
 import Button from "./ui/button";
 
 export default function HeroSection() {
@@ -7,12 +8,12 @@ export default function HeroSection() {
 
 
 			<div className="relative z-10 flex flex-col justify-start items-center h-full text-center px-4 container mx-auto">
-				<div className="absolute -left-5 -bottom-40 max-lg:hidden">
+				<div className="absolute -left-20 -bottom-40 max-lg:hidden">
 					<Text1 />
 				</div>
 
-				<div className="absolute -right-5 -top-40 max-lg:hidden">
-					<Text1 />
+				<div className="absolute -right-28 -top-40 max-lg:hidden">
+					<Text6 />
 				</div>
 				<div className="mt-20 flex flex-col items-center ">
 					<h1 className="text-[#1F2326] font-medium text-[40px] md:text-[80px] lg:text-[120px] w-full max-w-[1444px]">
