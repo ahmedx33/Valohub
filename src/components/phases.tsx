@@ -16,10 +16,10 @@ export function PhasesSection() {
 			</div>
 			<WavesComponent className="right-0 absolute top-[16rem]" />
 			<div className="absolute bg-[#FF4656] mt-24 z-20 h-[80rem] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-				<div className="w-full h-[125%] overflow-hidden relative  py-24 bg-[#FF4656] max-lg:px-0 px-80">
+				<div className="w-full h-[125%] max-md:h-full overflow-hidden relative  py-24 bg-[#FF4656] max-lg:px-0 px-80">
 					<img
 						src="/phases-overlay.svg"
-						className="w-fit h-fit absolute -bottom-24 rotate-[3deg] left-1/2 -translate-x-1/2"
+						className="w-fit h-fit absolute -bottom-24 rotate-[3deg] left-1/2 -translate-x-1/2 max-md:hidden"
 					/>
 					<div className="h-full bg-black w-1 mx-auto relative max-lg:w-full max-lg:bg-transparent max-lg:flex max-lg:flex-col">
 						<div className="size-4 rounded-full bg-black absolute left-1/2 -translate-x-1/2 -top-2 max-lg:bg-transparent" />

@@ -18,7 +18,7 @@ export default function FilterProducts({ onFilter }: { onFilter: (value: string)
                     key={region}
                     onClick={() => handleFilter(region)}
                     className={cn(
-                        "w-[146px] h-[48px] rounded-lg border border-[#FF4656] transition-all text-white text-[30px] font-semibold cursor-pointer hover:bg-[#FF4656]",
+                        "w-[146px] h-[48px] rounded-lg border border-[#FF4656] transition-all text-white text-[30px] max-md:text-[23px] font-semibold cursor-pointer hover:bg-[#FF4656]",
                         filter === region && "bg-[#FF4656] text-black"
                     )}
                 >

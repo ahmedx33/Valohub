@@ -10,7 +10,7 @@ export default function LolAccountsSection() {
 	const [filter, setFilter] = useState<string>("");
 	console.log("from accounts", filter);
 	return (
-		<section className="relative w-full h-fit bg-[#1F2326] py-8  mt-[30rem] container mx-auto">
+		<section className="relative w-full h-fit bg-[#1F2326] py-8  lg:mt-[30rem] container mx-auto">
 			
 			<div className="absolute left-0 bottom-0">
 				<Dots />
@@ -19,7 +19,7 @@ export default function LolAccountsSection() {
 				<Dots />
 			</div>
 			<div className="relative z-10 flex flex-col justify-start items-center h-full text-center px-4">
-				<div className="mt-20 flex flex-col items-center mb-12">
+				<div className="mb-20 flex flex-col items-center">
 					<h1 className="text-white font-bold whitespace-nowrap text-[40px] md:text-[80px] lg:text-[120px] w-full max-w-[1444px]">
 						<div className="w-full flex items-center justify-center">
 							<Splash />

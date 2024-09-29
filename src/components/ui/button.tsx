@@ -17,15 +17,13 @@ export default function Button({
 		const handleResize = () => {
 			const screenWidth = window.innerWidth;
 			if (screenWidth <= 640) {
-				// Mobile size
 				setSvgSize({ width: 150, height: 40 });
 			} else {
-				// Desktop size
 				setSvgSize({ width: 281, height: 71 });
 			}
 		};
 
-		handleResize(); // Set initial size
+		handleResize(); 
 		window.addEventListener("resize", handleResize);
 
 		return () => window.removeEventListener("resize", handleResize);
@@ -40,7 +38,7 @@ export default function Button({
 				<span
 					className={
 						variant === "bg"
-							? "italic font-bold text-center text-[40px] text-nowrap max-lg:font-medium"
+							? "italic font-bold text-center text-[40px] text-nowrap max-lg:font-medium max-md:text-[27px]"
 							: "max-lg:font-medium max-lg:text-[16px]"
 					}
 				>
@@ -233,8 +231,8 @@ export default function Button({
 			) : (
 				<svg
 					className="button-svg"
-					width={svgSize.width}
-					height={svgSize.height}
+					width="400"
+					height="82"
 					viewBox="0 0 554 82"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"

@@ -37,7 +37,7 @@ export default function AccountsSection() {
 				<Link to={"/valorant"}>
 					<Button
 						variant="bg"
-						className="mt-32 max-md:w-[90%] max-md:mx-auto overflow-hidden"
+						className="mt-32  max-md:mx-auto overflow-hidden"
 					>
 						SEE MORE
 					</Button>
