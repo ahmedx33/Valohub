@@ -13,8 +13,8 @@ export default function LOLProductsPage() {
     const [filter, setFilter] = useState<string>("");
     console.log("from lol page", filter);
     return (
-        <div className="mt-36">
-            <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656]">
+        <div className="mt-36 z-10">
+            <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656] z-10">
                 <WavesComponent className="absolute top-0 left-1/2 h-full max-lg:hidden -translate-x-1/2 " />
 
                 <div className="w-full h-full relative container mx-auto">
@@ -59,7 +59,9 @@ export default function LOLProductsPage() {
                     </div>
                     LOL ACCOUNTS
                 </h2>
-                <FilterProducts onFilter={setFilter} />
+                <div className="z-10">
+                    <FilterProducts onFilter={setFilter} />
+                </div>
             </div>
             <div className="flex flex-wrap gap-20 justify-center px-2 h-fit">
                 {PRODUCTS.map((product) => (

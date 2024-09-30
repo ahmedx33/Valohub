@@ -13,9 +13,9 @@ export default function ValoProductsPage() {
     const [filter, setFilter] = useState<string>("");
     console.log("from lol page", filter);
     return (
-        <div className="mt-36">
-            <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656]">
-                <WavesComponent className="absolute top-0 left-1/2 h-full -translate-x-1/2 " />
+        <div className="mt-36 z-10">
+            <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656] z-10">
+                <WavesComponent className="absolute top-0 left-1/2 h-full -translate-x-1/2 max-lg:hidden" />
                 <div className="w-full h-full relative container mx-auto">
                     <div className="absolute -left-20 max-lg:hidden z-50">
                         <Text2 />
@@ -58,7 +58,9 @@ export default function ValoProductsPage() {
                     </div>
                     VALORANT ACCOUNTS
                 </h2>
-                <FilterProducts onFilter={setFilter} />
+                <div className="z-10">
+                    <FilterProducts onFilter={setFilter} />
+                </div>
             </div>
             <div className="flex flex-wrap gap-20 justify-center px-2 h-fit">
                 {PRODUCTS.map((product) => (
