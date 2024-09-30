@@ -237,8 +237,7 @@ export default function Button({
 				</svg>
 			) : (
 				<svg
-					className="button-svg"
-					width="400"
+					className="button-svg w-[400px] max-md:w-[300px]"
 					height="82"
 					viewBox="0 0 554 82"
 					fill="none"
