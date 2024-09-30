@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion"
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
@@ -30,7 +31,13 @@ export default function Button({
 	}, []);
 
 	return (
-		<div
+		<motion.div
+			whileHover={{
+				scale: 1.09,
+				boxShadow: "0px 8px 15px rgba(52, 152, 219, 0.3)",
+			}}
+			whileTap={{ scale: 0.95 }}
+			transition={{ type: "spring", stiffness: 400, damping: 10 }}
 			tabIndex={0}
 			className={`cursor-pointer relative inline-block  ${className}`}
 		>
@@ -253,6 +260,6 @@ export default function Button({
 					/>
 				</svg>
 			)}
-		</div>
+		</motion.div>
 	);
 }
