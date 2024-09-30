@@ -7,11 +7,11 @@ export function Footer() {
 			<div className="size-full relative overflow-hidden">
 				<img
 					src="/phases-overlay.svg"
-					className="h-[822.71px] absolute -bottom-[31rem] -left-48 w-fit rotate-[3deg]"
+					className="h-[822.71px] absolute -bottom-[31rem] -left-48 w-fit rotate-[3deg] max-md:hidden"
 				/>
 				<img
 					src="/phases-overlay.svg"
-					className="h-[822.71px] absolute -bottom-[5rem] -right-48 w-fit rotate-[3deg]"
+					className="h-[822.71px] absolute -bottom-[5rem] -right-48 w-fit rotate-[3deg]  max-md:hidden"
 				/>
 				<div className="size-full  flex gap-16 items-center justify-center absolute">
 					<div className="flex flex-col gap-6 max-lg:hidden">
@@ -22,7 +22,7 @@ export function Footer() {
 					</div>
 					<img
 						src="/footer-image-2.svg"
-						className="relative z-20"
+						className="relative z-20 max-md:w-[200px]"
 					/>
 					<div className="flex flex-col gap-6 max-lg:hidden">
 						<img src="/footer-image-3.svg" />
