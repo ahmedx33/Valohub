@@ -17,7 +17,7 @@ export default function Button({
 		const handleResize = () => {
 			const screenWidth = window.innerWidth;
 			if (screenWidth <= 640) {
-				setSvgSize({ width: 150, height: 40 });
+				setSvgSize({ width: 200, height: 60 });
 			} else {
 				setSvgSize({ width: 281, height: 71 });
 			}
