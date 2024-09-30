@@ -46,7 +46,7 @@ export default function LOLProductsPage() {
                 </div>
             </div>
 
-            <div className="mb-20 flex flex-col items-center relative container mx-auto">
+            <div className="mb-20 flex flex-col items-center relative container mx-auto mt-10">
                 <div className="absolute left-0 bottom-0">
                     <Dots />
                 </div>
