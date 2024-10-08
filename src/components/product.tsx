@@ -1,6 +1,6 @@
 import Button from './ui/button';
 
-export default function Product({ id, image, name, price }: Product) {
+export default function Product({ uniqid, cloudflare_image_id, price_display, title }: Product) {
     return (
         <div className="relative w-full max-w-[442px] h-[636px] max-lg:h-auto mx-auto">
             <svg
@@ -29,13 +29,13 @@ export default function Product({ id, image, name, price }: Product) {
             </svg>
 
             <div className="relative z-10 w-full h-full flex flex-col items-center justify-between p-4">
-                <img src={image} alt={name} className="w-full h-[488px] object-cover max-lg:h-auto" />
-                <div className="text-center mb-20 max-lg:mb-12">
-                    <h2 className="text-[30px] max-lg:text-[20px] font-semibold MT-2">{name}</h2>
-                    <p className="text-[30px] font-semibold ">${price}</p>
+                <img src={`https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/${cloudflare_image_id}/shopitem`} alt={title} className="w-full h-[488px] object-cover max-lg:h-auto" />
+                <div className="text-center mb-10 max-lg:mb-12">
+                    <h2 className="text-[23px] max-lg:text-[20px] font-semibold MT-2">{title}</h2>
+                    <p className="text-[25px] font-semibold ">${price_display}</p>
                 </div>
                 <div className="absolute bottom-4 w-full flex justify-center translate-y-[43px]">
-                    <button data-sellix-product={id}>
+                    <button data-sellix-product={uniqid}>
                         <Button>BUY NOW</Button>
                     </button>
                 </div>

@@ -1,14 +1,22 @@
-import { Link } from "react-router-dom";
-import { PRODUCTS } from "./constants/products";
+import { Await, Link, useLoaderData } from "react-router-dom";
 import FilterProducts from "./filter-products";
 import Dots from "./other/dots";
 import Splash from "./other/splash";
 import Product from "./product";
 import Button from "./ui/button";
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { Spinner } from "./ui/spinner";
+
+
+type LoaderData = {
+	categoriesPromise: Promise<Category[]>;
+};
+
 
 export default function AccountsSection() {
 	const [filter, setFilter] = useState("");
+	const { categoriesPromise } = useLoaderData() as LoaderData;
+
 	console.log("from accounts", filter);
 	return (
 		<section className="relative w-full mx-auto h-fit bg-[#1F2326] py-8 container">
@@ -27,12 +35,65 @@ export default function AccountsSection() {
 						</div>
 						VALORANT ACCOUNTS
 					</h1>
-					<FilterProducts onFilter={setFilter} />
+
+					<div className="z-10">
+						<Suspense fallback={""}>
+							<Await resolve={categoriesPromise}>
+								{(categories: Category[]) => {
+									const regions = Array.from(
+										new Set(
+											categories
+												.filter(category => category.title.startsWith("Valorant"))
+												.map(category => category.title.split(" ").pop())
+										)
+									);
+
+									return <FilterProducts regions={regions} onFilter={setFilter} />;
+								}}
+							</Await>
+						</Suspense>
+					</div>
 				</div>
 				<div className="flex flex-wrap gap-20 justify-center px-2 h-fit">
-					{PRODUCTS.map((product) => (
-						<Product id={product.id} image={product.image} name={product.name} price={product.price} />
-					))}
+					<Suspense fallback={<Spinner />}>
+						<Await resolve={categoriesPromise}>
+							{(categories: Category[]) => {
+								const filteredCategories = categories.filter(
+									category =>
+										category.title.startsWith("Valorant") && category.title.includes(filter)
+								);
+
+								const groupedValorantCategory = filteredCategories.reduce(
+									(acc: { title: string; products_bound: Product[] }, category: Category) => {
+										const { products_bound } = category;
+
+										if (acc.products_bound.length === 0) {
+											acc = {
+												title: "Valorant",
+												products_bound: [...products_bound],
+											};
+										} else {
+											acc.products_bound.push(...products_bound);
+										}
+
+										return acc;
+									},
+									{ title: "Valorant", products_bound: [] }
+								);
+
+
+								return (
+									<div>
+										<div className="flex flex-wrap gap-10 justify-center px-2 h-fit">
+											{groupedValorantCategory.products_bound.slice(0, 3).map((product: Product) => (
+												<Product key={product.uniqid} {...product} />
+											))}
+										</div>
+									</div>
+								);
+							}}
+						</Await>
+					</Suspense>
 				</div>
 				<Link to={"/valorant"}>
 					<Button

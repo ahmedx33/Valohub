@@ -1,26 +1,35 @@
-import { useState } from "react";
-import { PRODUCTS } from "./constants/products";
+import { Suspense, useState } from "react";
 import FilterProducts from "./filter-products";
 import Dots from "./other/dots";
 import Splash from "./other/splash";
-import Product from "./product";
 import Button from "./ui/button";
 import { WavesComponent } from "./waves-component";
 import Text2 from "./other/text2";
 import Text3 from "./other/text3";
+import { Await, useLoaderData, useLocation } from "react-router-dom";
+import Product from "./product";
+import { Spinner } from "./ui/spinner";
 
-export default function ValoProductsPage() {
-    const [filter, setFilter] = useState<string>("");
-    console.log("from lol page", filter);
+type LoaderData = {
+    categoriesPromise: Promise<Category[]>;
+};
+
+export default function ValorantProductsPage() {
+    const [filter, setFilter] = useState<string>("NA");
+    const { categoriesPromise } = useLoaderData() as LoaderData;
+    const location = useLocation();
+
+    // Check if the current route starts with "/valorant"
+    const isValorantRoute = location.pathname.startsWith("/valorant");
+
     return (
         <div className="mt-36 z-10">
             <div className="relative h-[800px] py-24 max-lg:bg-[#FF4656] z-10">
-                <WavesComponent className="absolute top-0 left-1/2 h-full -translate-x-1/2 max-lg:hidden" />
+                <WavesComponent className="absolute top-0 left-1/2 h-full max-lg:hidden -translate-x-1/2 " />
                 <div className="w-full h-full relative container mx-auto">
                     <div className="absolute -left-20 max-lg:hidden z-50">
                         <Text2 />
                     </div>
-
                     <div className="absolute -right-20 -bottom-32 max-lg:hidden z-50">
                         <Text3 />
                     </div>
@@ -31,16 +40,12 @@ export default function ValoProductsPage() {
                             VALORANT Accounts
                         </h2>
                         <p className="w-[80%] text-[#1F2326] text-[30px] mx-auto text-center">
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                            Ut enim
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
                         </p>
                     </div>
-
                     <div className="w-full flex items-center gap-6 max-lg:flex-col justify-center">
                         <Button>HOME</Button>
-                        <Button>LEAGUE OF LEGENDS</Button>
+                        <Button>VALORANT</Button>
                     </div>
                 </div>
             </div>
@@ -59,14 +64,69 @@ export default function ValoProductsPage() {
                     VALORANT ACCOUNTS
                 </h2>
                 <div className="z-10">
-                    <FilterProducts onFilter={setFilter} />
+                    <Suspense fallback={""}>
+                        <Await resolve={categoriesPromise}>
+                            {(categories: Category[]) => {
+                                const regions = Array.from(
+                                    new Set(
+                                        categories
+                                            .filter(category => category.title.startsWith("Valorant"))
+                                            .map(category => category.title.split(" ").pop())
+                                    )
+                                );
+
+                                return <FilterProducts regions={regions} onFilter={setFilter} />;
+                            }}
+                        </Await>
+                    </Suspense>
                 </div>
             </div>
+
             <div className="flex flex-wrap gap-20 justify-center px-2 h-fit">
-                {PRODUCTS.map((product) => (
-                    <Product id={product.id} image={product.image} name={product.name} price={product.price} />
-                ))}
+                <Suspense fallback={<Spinner />}>
+                    <Await resolve={categoriesPromise}>
+                        {(categories: Category[]) => {
+                            if (isValorantRoute) {
+                                const filteredCategories = categories.filter(
+                                    category =>
+                                        category.title.startsWith("Valorant") && category.title.includes(filter)
+                                );
+
+                                const groupedValorantCategory = filteredCategories.reduce(
+                                    (acc: { title: string; products_bound: Product[] }, category: Category) => {
+                                        const { products_bound } = category;
+
+                                        if (acc.products_bound.length === 0) {
+                                            acc = {
+                                                title: "Valorant",
+                                                products_bound: [...products_bound],
+                                            };
+                                        } else {
+                                            acc.products_bound.push(...products_bound);
+                                        }
+
+                                        return acc;
+                                    },
+                                    { title: "Valorant", products_bound: [] }
+                                );
+
+
+                                return (
+                                    <div>
+                                        <div className="flex flex-wrap gap-10 justify-center px-2 h-fit">
+                                            {groupedValorantCategory.products_bound.map((product: Product) => (
+                                                <Product key={product.uniqid} {...product} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                );
+                            }
+
+                            return null;
+                        }}
+                    </Await>
+                </Suspense>
             </div>
         </div>
-    )
+    );
 }
