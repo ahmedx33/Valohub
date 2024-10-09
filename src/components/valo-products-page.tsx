@@ -39,8 +39,8 @@ export default function ValorantProductsPage() {
                         <h2 className="text-[120px] max-sm:text-3xl max-lg:text-5xl text-center text-[#1F2326] font-medium">
                             VALORANT Accounts
                         </h2>
-                        <p className="w-[80%] text-[#1F2326] text-[30px] mx-auto text-center">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        <p className="w-[80%] text-[#1F2326] text-[30px] max-lg:text-[20px] mx-auto text-center">
+                            Search through a wide range of Valorant accounts to find the one that is right for you.
                         </p>
                     </div>
                     <div className="w-full flex items-center gap-6 max-lg:flex-col justify-center">

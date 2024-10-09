@@ -26,8 +26,13 @@ export default function JoinCommunity() {
                 </div>
 
                 <div className="w-full flex items-center gap-6 max-lg:flex-col justify-center">
-                    <Button>JOIN DISCORD</Button>
-                    <Button>JOIN TELEGRAM</Button>
+                    <a href="https://discord.gg/mEuXHNGZ8z" target="_blank"
+                    >
+                        <Button >JOIN DISCORD</Button>
+                    </a>
+                    <a href="https://t.me/officialvalohub" target="_blank" >
+                        <Button>JOIN TELEGRAM</Button>
+                    </a>
                 </div>
             </div>
         </div>
