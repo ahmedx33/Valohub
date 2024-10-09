@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Text4 from "./other/text4";
 import Text5 from "./other/text5";
 import { WavesComponent } from "./waves-component";
@@ -17,7 +18,8 @@ export function PhasesSection() {
 			<WavesComponent className="right-0 absolute top-[16rem]" />
 			<div className="absolute bg-[#FF4656] mt-24 z-20 h-[80rem] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
 				<div className="w-full h-[125%] max-lg:h-full overflow-hidden relative  py-24 bg-[#FF4656] max-lg:px-0 px-80">
-					<img
+					<LazyLoadImage
+						effect="blur"
 						src="/phases-overlay.svg"
 						className="w-fit h-fit absolute -bottom-24 rotate-[3deg] left-1/2 -translate-x-1/2 max-lg:hidden"
 					/>

@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Text1 from "./other/text1";
 import Text6 from "./other/text6";
 import Button from "./ui/button";
@@ -34,7 +35,8 @@ export default function HeroSection() {
 
 				<div className="my-10">
 					<div className="bg-[#1F232680] w-[80px] h-[80px] flex items-center justify-center ">
-						<img
+						<LazyLoadImage
+							effect="blur"
 							draggable={false}
 							src="/val-logo.png"
 							alt="logog"

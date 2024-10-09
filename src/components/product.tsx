@@ -1,3 +1,4 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Button from './ui/button';
 
 export default function Product({ uniqid, cloudflare_image_id, price_display, title }: Product) {
@@ -29,7 +30,7 @@ export default function Product({ uniqid, cloudflare_image_id, price_display, ti
             </svg>
 
             <div className="relative z-10 w-full h-full flex flex-col items-center justify-between p-4">
-                <img src={`https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/${cloudflare_image_id}/shopitem`} alt={title} className="w-full h-[488px] object-cover max-lg:h-auto" />
+                <LazyLoadImage effect='blur' src={`https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/${cloudflare_image_id}/shopitem`} alt={title} className="w-full h-[488px] object-cover max-lg:h-auto" />
                 <div className="text-center mb-10 max-lg:mb-12">
                     <h2 className="text-[23px] max-lg:text-[20px] font-semibold MT-2">{title}</h2>
                     <p className="text-[25px] font-semibold ">${price_display}</p>
