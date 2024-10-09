@@ -6,7 +6,7 @@ const LINKS = [
     { name: "Home", path: "/", type: "path" },
     { name: "LEAGUE OF LEGENDS", path: "/lol", type: "path" },
     { name: "VALORANT", path: "/valorant", type: "path" },
-    { name: "COMMUNITY", path: "#community", type: "href" },
+    { name: "COMMUNITY", path: "/#community", type: "path" },
 ];
 
 export default function Header() {

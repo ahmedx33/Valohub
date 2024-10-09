@@ -6,7 +6,7 @@ import Button from "./ui/button";
 import { WavesComponent } from "./waves-component";
 import Text2 from "./other/text2";
 import Text3 from "./other/text3";
-import { Await, useLoaderData, useLocation } from "react-router-dom";
+import { Await, Link, useLoaderData, useLocation } from "react-router-dom";
 import Product from "./product";
 import { Spinner } from "./ui/spinner";
 
@@ -44,7 +44,9 @@ export default function ValorantProductsPage() {
                         </p>
                     </div>
                     <div className="w-full flex items-center gap-6 max-lg:flex-col justify-center">
-                        <Button>HOME</Button>
+                        <Link to={"/"}>
+                            <Button>HOME</Button>
+                        </Link>
                         <Button>VALORANT</Button>
                     </div>
                 </div>
