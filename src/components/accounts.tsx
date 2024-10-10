@@ -19,7 +19,7 @@ export default function AccountsSection() {
 
 	console.log("from accounts", filter);
 	return (
-		<section className="relative w-full mx-auto h-fit bg-[#1F2326] py-8 container">
+		<section id="buynow"  className="relative w-full mx-auto h-fit bg-[#1F2326] py-8 container">
 			<div className="absolute left-0 bottom-0">
 				<Dots />
 			</div>

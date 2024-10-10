@@ -30,10 +30,10 @@ export default function Product({ uniqid, cloudflare_image_id, price_display, ti
             </svg>
 
             <div className="relative z-10 w-full h-full flex flex-col items-center justify-between p-4">
-                <LazyLoadImage effect='blur' src={`https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/${cloudflare_image_id}/shopitem`} alt={title} className="w-full h-[488px] object-cover max-lg:h-auto" />
-                <div className="text-center mb-10 max-lg:mb-12">
-                    <h2 className="text-[23px] max-lg:text-[20px] font-semibold MT-2">{title}</h2>
-                    <p className="text-[25px] font-semibold ">${price_display}</p>
+                <LazyLoadImage effect='blur' src={`https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/${cloudflare_image_id}/shopitem`} alt={title} className="w-full  object-cover max-lg:h-auto" />
+                <div className="text-center mb-[3.5rem] max-lg:mb-12">
+                    <h2 className="text-[20px] max-lg:text-[20px] font-semibold MT-2">{title}</h2>
+                    <p className="text-[23px] font-semibold ">${price_display}</p>
                 </div>
                 <div className="absolute bottom-4 w-full flex justify-center translate-y-[43px]">
                     <button data-sellix-product={uniqid}>

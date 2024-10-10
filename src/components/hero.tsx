@@ -28,9 +28,13 @@ export default function HeroSection() {
 				</div>
 
 				<div className="flex items-center gap-8 mt-10 mb-16 max-lg:flex-col">
-					<Button>Buy Now</Button>
+					<a href="#buynow">
+						<Button>Buy Now</Button>
+					</a>
 
-					<Button>CONTACT US</Button>
+					<a href="https://t.me/officialvalohub" target="_blank">
+						<Button>CONTACT US</Button>
+					</a>
 				</div>
 
 				<div className="my-10">

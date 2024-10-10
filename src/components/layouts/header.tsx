@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 
 const LINKS = [
-    { name: "Home", path: "/", type: "path" },
+    { name: "HOME", path: "/", type: "path" },
     { name: "LEAGUE OF LEGENDS", path: "/lol", type: "path" },
     { name: "VALORANT", path: "/valorant", type: "path" },
     { name: "COMMUNITY", path: "/#community", type: "path" },
@@ -91,9 +91,11 @@ export default function Header() {
                         </li>
                     ))}
                 </ul>
-                <button className="bg-[#FF4654] text-white text-[16px] md:text-[18px] font-bold px-4 py-2 rounded-lg lg:block hidden">
-                    Buy Now
-                </button>
+                <a href="#buynow">
+                    <div className="bg-[#FF4654] text-white text-[16px] md:text-[18px] font-bold px-4 py-2 rounded-lg lg:block hidden uppercase">
+                        Buy Now
+                    </div>
+                </a>
 
                 <button
                     className="lg:hidden block text-white text-3xl"
@@ -102,7 +104,7 @@ export default function Header() {
                     <FiMenu />
                 </button>
                 {isMenuOpen && (
-                    <div className="absolute top-full left-0 right-0 w-full bg-[#1F2326] p-5 lg:hidden flex flex-col items-center space-y-4 mx-auto md:left-[2rem]">
+                    <div className="fixed top-full left-0 right-0 w-full bg-[#1F2326] p-5 lg:hidden flex flex-col items-center space-y-4 mx-auto ">
                         <ul className="flex flex-col items-center gap-4">
                             {LINKS.map((link) => (
                                 <li
@@ -118,8 +120,8 @@ export default function Header() {
                                 </li>
                             ))}
                         </ul>
-                        <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg">
-                            Buy Now
+                        <button className="bg-[#FF4654] text-white text-[18px] font-bold px-5 py-2 rounded-lg uppercase">
+                            BUY NOW
                         </button>
                     </div>
                 )}
